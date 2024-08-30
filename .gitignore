@@ -1,0 +1,87 @@
+# .NET specific ignores
+# .NET build results
+bin/
+obj/
+
+# .NET user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# .NET publish folder
+publish/
+out/
+
+# .NET NLog config file
+nlog.config
+
+# ASP.NET Scaffolding
+.scaffolding/
+
+# Entity Framework
+*.edmx.diagram
+*.edmx.sql
+*.edmx.resources
+
+# Angular specific ignores
+# Angular build results
+dist/
+out-tsc/
+build/
+
+# Angular cache
+.angular/cache/
+.angular/cli/
+
+# Angular test coverage
+coverage/
+
+# Angular environment files
+src/environments/*.ts
+
+# Node.js specific ignores (used by Angular)
+# Dependency directories
+node_modules/
+jspm_packages/
+
+# Optional npm cache directory
+.npm/
+
+# Optional eslint cache
+.eslintcache
+
+# Angular logs and temporary files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# OS-specific and IDE-specific files
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+.Trash-*
+
+# JetBrains IDEs
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Visual Studio Code
+.vscode/
+
+# Visual Studio
+.vscode/
+.vs/
