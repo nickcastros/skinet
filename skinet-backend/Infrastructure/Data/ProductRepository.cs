@@ -7,8 +7,6 @@ namespace skinet.Infrastructure.Data;
 
 public class ProductRepository(StoreContext context) : IProductRepository
 {
-
-
     public void AddProduct(Product product)
     {
         context.Products.Add(product);
