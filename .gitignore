@@ -85,3 +85,15 @@ $RECYCLE.BIN/
 # Visual Studio
 .vscode/
 .vs/
+
+# Redis specific ignores
+# Redis dump file
+dump.rdb
+# Redis append only file
+appendonly.aof
+# Redis logs
+redis.log
+# Redis temporary files
+*.pid
+
+mysql_data/
