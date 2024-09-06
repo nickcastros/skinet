@@ -20,7 +20,7 @@ public class CartController(ICartService cartService) : BaseAPIController
         var updated = await cartService.SetCartAsync(cart);
         if (updated == null) return BadRequest("Problem updating the cart");
         return Ok(updated);
-    }
+}   
 
     [HttpDelete]
     public async Task<ActionResult> DeleteCart(string id)

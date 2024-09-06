@@ -1,5 +1,9 @@
 @if (product) {
-<mat-card appearance="raised" routerLink="/shop/{{ product.id }}" class="product-cart">
+<mat-card
+  appearance="raised"
+  routerLink="/shop/{{ product.id }}"
+  class="product-cart"
+>
   <img src="{{ product.pictureUrl }}" alt="{{ product.name }}" />
   <mat-card-content class="mt-2">
     <h2 class="text-sm font-semibold uppercase">{{ product.name }}</h2>
@@ -7,8 +11,12 @@
       {{ product.price | currency : "USD" }}
     </p>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-stroked-button class="w-full">
+  <mat-card-actions (click)="$event.stopPropagation()">
+    <button
+      mat-stroked-button
+      class="w-full"
+      (click)="cartService.addItemToCard(product)"
+    >
       <mat-icon>add_shopping_cart</mat-icon>
       Add to cart
     </button>
