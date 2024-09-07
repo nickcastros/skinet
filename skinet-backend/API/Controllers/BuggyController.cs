@@ -1,4 +1,6 @@
 using System;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using skinet.API.DTOs;
 using skinet.Core.Entities;
@@ -34,6 +36,15 @@ public class BuggyController : BaseAPIController
     public ActionResult GetValidationError(CreateProductDto product)
     {
         return Ok();
+    }
+
+    [Authorize]
+    [HttpGet("secret")]
+    public ActionResult GetSecret()
+    {
+        var name = User.FindFirst(ClaimTypes.Name)?.Value;
+        var id = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+        return Ok("Hello " + name + " with id " + id);
     }
 
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using skinet.Infrastructure.Data;
 
@@ -11,9 +12,11 @@ using skinet.Infrastructure.Data;
 namespace skinet.Infrastructure.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    partial class StoreContextModelSnapshot : ModelSnapshot
+    [Migration("20240907153629_AddressAdded")]
+    partial class AddressAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -177,11 +180,11 @@ namespace skinet.Infrastructure.Migrations
                     b.Property<string>("Line2")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("PostalCode")
+                    b.Property<string>("State")
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<string>("State")
+                    b.Property<string>("ZipCode")
                         .IsRequired()
                         .HasColumnType("longtext");
 
