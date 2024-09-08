@@ -32,7 +32,7 @@
       </dl>
     </div>
     <div class="flex flex-col gap-2">
-      <button routerLink="/checkout" mat-flat-button>Checkout</button>
+      <button [disabled]="cartService.cart()==null || cartService.cart()?.items?.length === 0" routerLink="/checkout" mat-flat-button>Checkout</button>
     </div>
     <div class="flex flex-col gap-2">
       <button routerLink="/shop" mat-button>Continue Shopping</button>

@@ -30,9 +30,28 @@
       >
         <mat-icon>shopping_cart</mat-icon>
       </a>
-
-      <button mat-stroked-button color="primary">Login</button>
-      <button mat-stroked-button color="primary">Register</button>
+      @if(accountService.currentUser()){
+      <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>arrow_drop_down</mat-icon>
+        <span>{{ accountService.currentUser()?.email }}</span>
+      </button>
+      }@else {
+      <button
+        mat-stroked-button
+        color="primary"
+        routerLink="/account/login"
+        routerLinkActive="active"
+      >
+        Login
+      </button>
+      <button
+        mat-stroked-button
+        color="primary"
+        routerLink="/account/register"
+        routerLinkActive="active"
+      >
+        Register</button
+      >}
     </div>
   </div>
 </header>
@@ -43,3 +62,16 @@
   class="fixed top-20 z-50"
 ></mat-progress-bar>
 }
+
+<mat-menu #menu="matMenu" class="px-5">
+  <button class="px-3" mat-menu-item routerLink="/cart">
+    <mat-icon>shopping_cart</mat-icon>My Cart
+  </button>
+  <button class="px-3" mat-menu-item routerLink="/orders">
+    <mat-icon>history</mat-icon>Orders
+  </button>
+  <mat-divider></mat-divider>
+  <button class="px-3" mat-menu-item (click)="logout()">
+    <mat-icon>logout</mat-icon>Logout
+  </button>
+</mat-menu>
